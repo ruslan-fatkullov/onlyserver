@@ -35,6 +35,6 @@ app.listen(PORT, '80.78.245.52',() => {
   console.log(`Server is running on port ${PORT}.`);
 });
 
-const db = require("./app/models");
-db.sequelize.sync();
+/*const db = require("./app/models");
+db.sequelize.sync();*/
 
