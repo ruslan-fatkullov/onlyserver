@@ -9,9 +9,7 @@ const corsOptions = {
 
 app.set("view engine", "hbs");
 
-/*app.get("/", function(request, response){
-  response.sendFile(__dirname + "/view/index.html");
-});*/
+
 
 app.use(cors(corsOptions));
 app.use(bodyParser.json());
@@ -27,8 +25,13 @@ app.use("/help", helpRoutes);
 app.use("/launcher", launcherRoutes);
 app.use("/deleted", deletedUsersRoutes);
 
+app.get("/", function(request, response){
+  response.sendFile(__dirname + "/index.html");
+});
+
+
 const PORT = process.env.PORT || 8080;
-app.listen(PORT, '0.0.0.0',() => {
+app.listen(PORT, '80.78.245.52',() => {
   console.log(`Server is running on port ${PORT}.`);
 });
 
