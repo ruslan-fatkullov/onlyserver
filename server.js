@@ -32,7 +32,7 @@ app.get("/", function(request, response){
 const mysql = require("mysql");
   
 const connection = mysql.createConnection({
-  host: "localhost",
+  host: "127.0.0.1",
   user: "root",
   database: "testdb",
   password: ""
