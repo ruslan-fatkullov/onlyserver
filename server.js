@@ -35,21 +35,6 @@ app.listen(PORT, '80.78.245.52',() => {
   console.log(`Server is running on port ${PORT}.`);
 });
 
-var mysql = require('mysql');
-var connection = mysql.createConnection({
-  host     : 'localhost',
-  user     : 'root',
-  password : '',
-});
-connection.connect(function(err){
-  if (err) {
-    return console.error("Ошибка: " + err.message);
-  }
-  else{
-    console.log("Подключение к серверу MySQL успешно установлено");
-  }
-});
-
-/*const db = require("./app/models");
-db.sequelize.sync();*/
+const db = require("./app/models");
+db.sequelize.sync();
 
