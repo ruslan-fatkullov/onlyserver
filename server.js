@@ -29,28 +29,12 @@ app.get("/", function(request, response){
   response.sendFile(__dirname + "/index.html");
 });
 
-const mysql = require("mysql");
-  
-const connection = mysql.createConnection({
-  host: "127.0.0.1",
-  user: "root",
-  database: "testdb",
-  password: ""
-});
- connection.connect(function(err){
-    if (err) {
-      return console.error("Ошибка: " + err.message);
-    }
-    else{
-      console.log("Подключение к серверу MySQL успешно установлено");
-    }
- });
 
 const PORT = process.env.PORT || 8080;
 app.listen(PORT, '80.78.245.52',() => {
   console.log(`Server is running on port ${PORT}.`);
 });
 
-/*const db = require("./app/models");
+const db = require("./app/models");
 db.sequelize.sync();
-*/
+
