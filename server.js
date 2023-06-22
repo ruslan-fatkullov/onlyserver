@@ -29,7 +29,7 @@ app.get("/", function(request, response){
   response.sendFile(__dirname + "/index.html");
 });
 
-const mysql = require("mysql2");
+const mysql = require("mysql");
   
 const connection = mysql.createConnection({
   host: "localhost",
