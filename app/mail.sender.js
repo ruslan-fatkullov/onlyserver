@@ -39,6 +39,8 @@ exports.sendMessage = async (email, tokenOrPassword, subject) =>  {
         subject: email_subject,
         html: html,
     }
+    console.log(mailBody)
+
     let result = await transporter.sendMail(mailBody);
     console.log(result)
 }
