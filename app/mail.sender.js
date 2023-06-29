@@ -11,7 +11,7 @@ exports.sendMessage = async (email, tokenOrPassword, subject) =>  {
 
     console.log("ЭТО ОТПРАВКА НА ПОЧТУ")
 
-    let testEmailAccount = await nodemailer.createTestAccount(); 
+    //let testEmailAccount = await nodemailer.createTestAccount(); 
     let transporter = nodemailer.createTransport({
         host: 'smtp.ethereal.email',
         port: 25,
