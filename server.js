@@ -1,6 +1,9 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 
+const file_config = require("./app/file_directory/file.config")
+
+
 const app = express();
 
 const path = __dirname + '/onlyclient/dist/';
@@ -28,7 +31,7 @@ app.get("/", function(request, response){
 
 const PORT = 3000;
 app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}. ${__dirname}`);
+  console.log(`Server is running on port ${PORT}. ${file_config.FILE_DIRECTORY}`);
 });
 
 const db = require("./app/models");
