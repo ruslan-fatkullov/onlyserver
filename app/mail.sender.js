@@ -13,7 +13,7 @@ exports.sendMessage = async (email, tokenOrPassword, subject) =>  {
 
     let testEmailAccount = await nodemailer.createTestAccount(); 
     let transporter = nodemailer.createTransport({
-        host: 'mail.hosting.reg.ru',
+        host: 'smtp.ethereal.email',
         port: 25,
         secure: false,
     });
