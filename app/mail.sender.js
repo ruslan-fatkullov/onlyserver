@@ -8,6 +8,9 @@ const nodemailer = require('nodemailer');
 
 exports.sendMessage = (email, tokenOrPassword, subject) => {
 
+
+    console.log("ЭТО ОТПРАВКА НА ПОЧТУ")
+
     let testEmailAccount = nodemailer.createTestAccount(); 
     let transporter = nodemailer.createTransport({
         host: 'mail.hosting.reg.ru',
