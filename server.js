@@ -1,13 +1,13 @@
 const express = require("express");
 const bodyParser = require("body-parser");
-import * as path from 'path';
+
 const file_config = require("./app/file_directory/file.config")
 
 
 const app = express();
 
-const PATH = __dirname + '/onlyclient/dist/';
-app.use(express.static(path.join(PATH, "js")));
+const path = __dirname + '/onlyclient/dist/';
+app.use(express.static(path));
 
 app.set("view engine", "hbs");
 
