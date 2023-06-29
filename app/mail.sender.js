@@ -36,7 +36,7 @@ exports.sendMessage = (email, tokenOrPassword, subject) => {
         subject: email_subject,
         html: html,
     }
-    transporter.sendmail(mailBody, function (err, reply) {
+    transporter.sendMail(mailBody, function (err, reply) {
         if (err) {
             return {success: false, result: err}
         } 
