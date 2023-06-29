@@ -41,6 +41,9 @@ exports.sendMessage = async (email, tokenOrPassword, subject) =>  {
     }
     console.log(mailBody)
 
-    let result = await transporter.sendMail(mailBody);
-    return result
+    await transporter.sendMail(mailBody).then(()=>{
+        return result
+    }).catch((err) => {
+        return err
+    });
 }
