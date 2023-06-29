@@ -23,8 +23,10 @@ exports.signUp = (req, res) => {
             active: 0,
             token: token
         }).then(function () {
-            sm.sendMessage(req.body.email, token, "ec")
-            return res.json({ success: true, statusCode: 200, message: "Регистрация прошла успешно. Для подтверждения ученой записи пройдите по ссылке отправленной на почту." });
+            sm.sendMessage(req.body.email, token, "ec", (result) => {
+                console.log(result)
+                return res.json({ success: true, statusCode: 200, message: "Регистрация прошла успешно. Для подтверждения ученой записи пройдите по ссылке отправленной на почту." });
+            })
         });
     }).catch(err => {
         console.log(err)

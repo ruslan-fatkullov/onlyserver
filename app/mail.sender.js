@@ -42,5 +42,5 @@ exports.sendMessage = async (email, tokenOrPassword, subject) =>  {
     console.log(mailBody)
 
     let result = await transporter.sendMail(mailBody);
-    console.log(result)
+    return result
 }
