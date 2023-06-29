@@ -24,9 +24,9 @@ app.use("/help", helpRoutes);
 app.use("/launcher", launcherRoutes);
 app.use("/deleted", deletedUsersRoutes);
 
-app.get("/", function(request, response){
+/*app.get("/", function(request, response){
   response.sendFile(__dirname + "/onlyclient/dist/index.html");
-});
+});*/
 
 
 const PORT = 3000;
