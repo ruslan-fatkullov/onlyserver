@@ -1,17 +1,17 @@
 
-const sendmail = require('sendmail')();
+//const sendmail = require('sendmail')();
 const hbc = require("./config/host.config")
 
 const nodemailer = require('nodemailer');
 
 
 
-exports.sendMessage = (email, tokenOrPassword, subject) => {
+exports.sendMessage = async (email, tokenOrPassword, subject) =>  {
 
 
     console.log("ЭТО ОТПРАВКА НА ПОЧТУ")
 
-    let testEmailAccount = nodemailer.createTestAccount(); 
+    let testEmailAccount = await nodemailer.createTestAccount(); 
     let transporter = nodemailer.createTransport({
         host: 'mail.hosting.reg.ru',
         port: 25,
@@ -39,12 +39,6 @@ exports.sendMessage = (email, tokenOrPassword, subject) => {
         subject: email_subject,
         html: html,
     }
-    let result = transporter.sendMail(mailBody, function (err, reply) {
-        if (err) {
-            return {success: false, result: err}
-        } 
-        return {success: true, result: reply}
-        
-    });
+    let result = await transporter.sendMail(mailBody);
     console.log(result)
 }
