@@ -28,7 +28,7 @@ app.get("/", function(request, response){
 
 const PORT = 3000;
 app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}. ||  ${process.env.EMAIL} || ${process.env.PASSWORD}`);
+  console.log(`Server is running on port ${PORT}.`);
 });
 
 const db = require("./app/models");
