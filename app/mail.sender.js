@@ -2,9 +2,18 @@
 const sendmail = require('sendmail')();
 const hbc = require("./config/host.config")
 
+const nodemailer = require('nodemailer');
+
 
 
 exports.sendMessage = (email, tokenOrPassword, subject) => {
+
+    let testEmailAccount = nodemailer.createTestAccount(); 
+    let transporter = nodemailer.createTransport({
+        host: 'mail.hosting.reg.ru',
+        port: 25,
+        secure: false,
+    });
 
     let href = ``
     let html = ``
@@ -27,7 +36,7 @@ exports.sendMessage = (email, tokenOrPassword, subject) => {
         subject: email_subject,
         html: html,
     }
-    sendmail(mailBody, function (err, reply) {
+    transporter.sendmail(mailBody, function (err, reply) {
         if (err) {
             return {success: false, result: err}
         } 
