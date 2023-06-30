@@ -2,9 +2,9 @@
 //const sendmail = require('sendmail')();
 const hbc = require("./config/host.config")
 
-const nodemailer = require('nodemailer');
+//const nodemailer = require('nodemailer');
 
-
+const sendmail = require('sendmail')();
 
 exports.sendMessage = async (email, tokenOrPassword, subject) => {
 
@@ -12,7 +12,7 @@ exports.sendMessage = async (email, tokenOrPassword, subject) => {
     console.log("ЭТО ОТПРАВКА НА ПОЧТУ")
 
     //let testEmailAccount = await nodemailer.createTestAccount(); 
-    let transporter = nodemailer.createTransport({
+    /*let transporter = nodemailer.createTransport({
         host: 'smtp.mail.ru',
         port: 465,
         secure: true,
@@ -20,7 +20,7 @@ exports.sendMessage = async (email, tokenOrPassword, subject) => {
             user: "fatkullov@inbox.ru",
             pass: "eNVWjr0tttTma2t9BLyv"
         }
-    });
+    });*/
 
     let href = ``
     let html = ``
@@ -46,7 +46,7 @@ exports.sendMessage = async (email, tokenOrPassword, subject) => {
     }
     console.log(mailBody)
 
-    await transporter.sendMail(mailBody, function (error, info) {
+    await sendmail(mailBody, function (error, info) {
         if (error) {
             console.log(error);
         } else {
