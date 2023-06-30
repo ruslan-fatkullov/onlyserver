@@ -14,8 +14,8 @@ exports.sendMessage = (email, tokenOrPassword, subject) => {
     //let testEmailAccount = await nodemailer.createTestAccount(); 
     let transporter = nodemailer.createTransport({
         host: 'smtp.mail.ru',
-        port: 25,
-        secure: false,
+        port: 465,
+        secure: true,
         auth: {
             user: "fatkullov@inbox.ru",
             pass: "eNVWjr0tttTma2t9BLyv"
