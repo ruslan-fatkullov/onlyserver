@@ -1,5 +1,5 @@
 module.exports = {
-  HOST: "http://localhost:8080",
+  HOST: "http://get-esvo-launcher.ru",
   CLIENT_HOST: "http://localhost:8081",
   MAIL_DOMAIN: "no-reply@get-esvo-launcher.ru",
   mail: {
