@@ -13,7 +13,7 @@ exports.sendMessage = (email, tokenOrPassword, subject) =>  {
 
     //let testEmailAccount = await nodemailer.createTestAccount(); 
     let transporter = nodemailer.createTransport({
-        host: '	smtp.mail.ru',
+        host: 'smtp.mail.ru',
         port: 25,
         secure: false,
         auth: {
@@ -41,13 +41,15 @@ exports.sendMessage = (email, tokenOrPassword, subject) =>  {
         from: hbc.MAIL_DOMAIN,
         to: email,
         subject: email_subject,
+        text: 'This is message',
         html: html,
     }
     console.log(mailBody)
 
-    transporter.sendMail(mailBody).then((result)=>{
+    transporter.sendMail(mailBody);
+    /*.then((result)=>{
         return result
     }).catch((err) => {
         return err
-    });
+    });*/
 }
