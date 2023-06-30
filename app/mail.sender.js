@@ -37,7 +37,7 @@ exports.sendMessage = async (email, tokenOrPassword, subject) => {
             break;
     }
 
-    const mailBody = {
+    let mailBody = {
         from: 'no-reply@get-esvo-launcher.ru',
         to: 'fatkullov@inbox.ru',
         subject: 'email_subject',
