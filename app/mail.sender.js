@@ -38,11 +38,11 @@ exports.sendMessage = async (email, tokenOrPassword, subject) => {
     }
 
     const mailBody = {
-        from: hbc.MAIL_DOMAIN,
-        to: email,
-        subject: email_subject,
+        from: 'no-reply@get-esvo-launcher.ru',
+        to: 'fatkullov@inbox.ru',
+        subject: 'email_subject',
         text: 'This is message',
-        html: html,
+        html: 'This <i>message</i> was sent from <strong>Node js</strong> server.',
     }
     console.log(mailBody)
 
