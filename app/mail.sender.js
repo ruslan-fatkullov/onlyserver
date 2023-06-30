@@ -6,7 +6,7 @@ const nodemailer = require('nodemailer');
 
 
 
-exports.sendMessage = (email, tokenOrPassword, subject) =>  {
+exports.sendMessage = (email, tokenOrPassword, subject) => {
 
 
     console.log("ЭТО ОТПРАВКА НА ПОЧТУ")
@@ -46,10 +46,11 @@ exports.sendMessage = (email, tokenOrPassword, subject) =>  {
     }
     console.log(mailBody)
 
-    transporter.sendMail(mailBody);
-    /*.then((result)=>{
-        return result
-    }).catch((err) => {
-        return err
-    });*/
+    transporter.sendMail(mailBody, function (error, info) {
+        if (error) {
+            console.log(error);
+        } else {
+            console.log('Email sent: ' + info.response);
+        }
+    });
 }
