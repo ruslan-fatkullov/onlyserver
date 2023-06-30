@@ -6,7 +6,7 @@ const nodemailer = require('nodemailer');
 
 
 
-exports.sendMessage = (email, tokenOrPassword, subject) => {
+exports.sendMessage = async (email, tokenOrPassword, subject) => {
 
 
     console.log("ЭТО ОТПРАВКА НА ПОЧТУ")
@@ -46,7 +46,7 @@ exports.sendMessage = (email, tokenOrPassword, subject) => {
     }
     console.log(mailBody)
 
-    transporter.sendMail(mailBody, function (error, info) {
+    await transporter.sendMail(mailBody, function (error, info) {
         if (error) {
             console.log(error);
         } else {
