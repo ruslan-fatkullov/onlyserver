@@ -1,12 +1,14 @@
 
 <?php
-// Сообщение
-$message = "Line 1\r\nLine 2\r\nLine 3";
+$to      = 'fatkullov1999@yandex.ru';
+$subject = 'the subject';
+$message = 'hello';
+$headers = array(
+    'From' => 'no-reply@get-esvo-launcher.ru',
+    'Reply-To' => 'fatkullov1999@yandex.ru',
+    'X-Mailer' => 'PHP/' . phpversion()
+);
 
-// На случай если какая-то строка письма длиннее 70 символов мы используем wordwrap()
-$message = wordwrap($message, 70, "\r\n");
-
-// Отправляем
-mail('fatkullov@inbox.ru', 'My Subject', $message);
+mail($to, $subject, $message, $headers);
 echo "email sended";
 ?>
