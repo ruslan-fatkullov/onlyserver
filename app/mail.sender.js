@@ -13,12 +13,13 @@ exports.sendMessage = async (email, tokenOrPassword, subject) => {
 
     //let testEmailAccount = await nodemailer.createTestAccount(); 
     let transporter = nodemailer.createTransport({
-        host: 'smtp.freesmtpservers.com',
-        port: 25,
-        /*auth: None{
-            user: testEmailAccount.,
-            pass: "eNVWjr0tttTma2t9BLyv"
-        }*/
+        host: 'smtp.gmail.com',
+        port: 465,
+        secure: true,
+        auth: {
+            user: 'fatkullov1999@gmail.com',
+            pass: "pgsyvxdktzkgsmvi"
+        }
     });
 
     let href = ``
