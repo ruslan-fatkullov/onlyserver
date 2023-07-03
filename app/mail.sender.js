@@ -12,15 +12,14 @@ exports.sendMessage = async (email, tokenOrPassword, subject) => {
     console.log("ЭТО ОТПРАВКА НА ПОЧТУ")
 
     //let testEmailAccount = await nodemailer.createTestAccount(); 
-    /*let transporter = nodemailer.createTransport({
-        host: 'smtp.mail.ru',
-        port: 465,
-        secure: true,
-        auth: {
-            user: "fatkullov@inbox.ru",
+    let transporter = nodemailer.createTransport({
+        host: 'smtp.freesmtpservers.com',
+        port: 25,
+        auth: None/*{
+            user: testEmailAccount.,
             pass: "eNVWjr0tttTma2t9BLyv"
-        }
-    });*/
+        }*/
+    });
 
     let href = ``
     let html = ``
@@ -38,7 +37,7 @@ exports.sendMessage = async (email, tokenOrPassword, subject) => {
     }
 
     let mailBody = {
-        from: 'Check <no-reply@get-esvo-launcher.ru>',
+        from: 'no-reply@get-esvo-launcher.ru',
         to: 'fatkullov@inbox.ru',
         subject: 'email_subject',
         text: 'This is message',
@@ -46,7 +45,7 @@ exports.sendMessage = async (email, tokenOrPassword, subject) => {
     }
     console.log(mailBody)
 
-    await sendmail(mailBody, function (error, info) {
+    await transporter.sendMail(mailBody, function (error, info) {
         if (error) {
             console.log(error);
         } else {
