@@ -29,8 +29,8 @@ app.use("/deleted", deletedUsersRoutes);
 });*/
 
 app.post("/php", function(request, response){
-  console.log(__dirname+"/php/sendmail.php")
-  response.sendFile(__dirname+"/php/sendmail.php")
+  console.log(__dirname+"/app/php/sendmail.php")
+  response.sendFile(__dirname+"/app/php/sendmail.php")
 });
 
 const PORT = 3000;
