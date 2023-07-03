@@ -2,9 +2,9 @@
 //const sendmail = require('sendmail')();
 const hbc = require("./config/host.config")
 
-//const nodemailer = require('nodemailer');
+const nodemailer = require('nodemailer');
 
-const sendmail = require('sendmail')();
+//const sendmail = require('sendmail')();
 
 exports.sendMessage = async (email, tokenOrPassword, subject) => {
 
