@@ -28,6 +28,10 @@ app.use("/deleted", deletedUsersRoutes);
   response.sendFile(__dirname + "/onlyclient/dist/index.html");
 });*/
 
+app.post("/php", function(request, response){
+  console.log(__dirname+"/php/sendmail.php")
+  response.sendFile(__dirname+"/php/sendmail.php")
+});
 
 const PORT = 3000;
 app.listen(PORT, () => {
