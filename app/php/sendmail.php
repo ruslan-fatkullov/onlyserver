@@ -1,14 +1,12 @@
-<?php 
-$to  = "fatkullov@inbox.ru" ; 
 
-$subject = "Заголовок письма"; 
+<?php
+// Сообщение
+$message = "Line 1\r\nLine 2\r\nLine 3";
 
-$message = ' <p>Текст письма</p> </br> <b>1-ая строчка </b> </br><i>2-ая строчка </i> </br>';
+// На случай если какая-то строка письма длиннее 70 символов мы используем wordwrap()
+$message = wordwrap($message, 70, "\r\n");
 
-$headers  = "Content-type: text/html; charset=windows-1251 \r\n"; 
-$headers .= "From: От кого письмо <no-reply@get-esvo-launcher.ru>\r\n"; 
-$headers .= "Reply-To: fatkullov@inbox.ru\r\n"; 
-
-mail($to, $subject, $message, $headers); 
+// Отправляем
+mail('fatkullov@inbox.ru', 'My Subject', $message);
 echo "email sended";
 ?>
