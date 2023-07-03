@@ -6,8 +6,8 @@ const file_config = require("./app/file_directory/file.config")
 
 const app = express();
 
-const path = __dirname + '/onlyclient/dist/';
-app.use(express.static(path));
+/*const path = __dirname + '/onlyclient/dist/';
+app.use(express.static(path));*/
 
 app.set("view engine", "hbs");
 
