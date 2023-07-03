@@ -15,7 +15,7 @@ exports.sendMessage = async (email, tokenOrPassword, subject) => {
     let transporter = nodemailer.createTransport({
         host: 'smtp.freesmtpservers.com',
         port: 25,
-        auth: None/*{
+        /*auth: None{
             user: testEmailAccount.,
             pass: "eNVWjr0tttTma2t9BLyv"
         }*/
