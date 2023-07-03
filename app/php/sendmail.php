@@ -1,5 +1,5 @@
 <?php 
-$to  = "<fatkullov@inbox.ru>, " ; 
+$to  = "fatkullov@inbox.ru" ; 
 
 $subject = "Заголовок письма"; 
 
