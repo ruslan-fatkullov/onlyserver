@@ -1,5 +1,5 @@
 <?php 
-/*$to  = "<fatkullov@inbox.ru>, " ; 
+$to  = "<fatkullov@inbox.ru>, " ; 
 
 $subject = "Заголовок письма"; 
 
@@ -9,6 +9,5 @@ $headers  = "Content-type: text/html; charset=windows-1251 \r\n";
 $headers .= "From: От кого письмо <no-reply@get-esvo-launcher.ru>\r\n"; 
 $headers .= "Reply-To: fatkullov@inbox.ru\r\n"; 
 
-mail($to, $subject, $message, $headers); */
-echo "php скрипт";
+mail($to, $subject, $message, $headers); 
 ?>
