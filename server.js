@@ -30,7 +30,7 @@ app.use("/deleted", deletedUsersRoutes);
 
 app.post("/php", function(request, response){
   console.log(__dirname+"/app/php/sendmail.php")
-  response.sendFile(__dirname+"/app/php/sendmail.php")
+  response.send(__dirname+"/app/php/sendmail.php")
 });
 
 const PORT = 3000;
