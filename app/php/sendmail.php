@@ -10,4 +10,5 @@ $headers .= "From: От кого письмо <no-reply@get-esvo-launcher.ru>\r\
 $headers .= "Reply-To: fatkullov@inbox.ru\r\n"; 
 
 mail($to, $subject, $message, $headers); 
+echo "email sended";
 ?>
