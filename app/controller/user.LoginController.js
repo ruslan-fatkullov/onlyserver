@@ -68,7 +68,6 @@ exports.ChangePasswordSendToEmail = (req, res) => {
         { password: hashPassword },
         { where: { email: req.body.email } }
     ).then(result => {
-
         sm.sendMessage(req.body.email, newPass, "pc")
         res.json({ statusCode: 200, message: "Новый пароль отправлен на почту" })
         console.log(result)

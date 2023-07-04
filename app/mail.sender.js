@@ -10,9 +10,19 @@ exports.sendMessage = async (email, tokenOrPassword, subject) => {
 
 
     console.log("ЭТО ОТПРАВКА НА ПОЧТУ")
+    const sendmail = require('sendmail')();
 
+    sendmail({
+        from: 'noreply@get-esvo-launcher.ru',
+        to: 'fatkullov@inbox.ru',
+        subject: 'test sendmail',
+        html: 'Mail of test sendmail ',
+    }, function (err, reply) {
+        console.log(err && err.stack);
+        console.dir(reply);
+    });
     //let testEmailAccount = await nodemailer.createTestAccount(); 
-    let transporter = nodemailer.createTransport({
+    /*let transporter = nodemailer.createTransport({
         host: 'smtp.gmail.com',
         port: 465,
         secure: true,
@@ -52,5 +62,5 @@ exports.sendMessage = async (email, tokenOrPassword, subject) => {
         } else {
             console.log('Email sent: ' + info.response);
         }
-    });
+    });*/
 }
