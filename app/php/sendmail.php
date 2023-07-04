@@ -18,6 +18,9 @@ $message = '
         ';
 
 // проверяет отправилась ли почта
-mail("fatkullov@inbox.ru", "Подтвердите Email на сайте", $message, $headers);
-echo "email sended\r\n";
+if(mail("fatkullov@inbox.ru", "Подтвердите Email на сайте", $message, $headers)){
+    echo "email sended\r\n";
+} else {
+    echo "not\r\n";
+}
 ?>
