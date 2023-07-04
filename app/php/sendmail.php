@@ -3,7 +3,7 @@
 // Переменная $headers нужна для Email заголовка
 $headers  = "MIME-Version: 1.0\r\n";
 $headers .= "Content-type: text/html; charset=utf-8\r\n";
-$headers .= "To: <fatkullov@inbox.ru>\r\n";
+$headers .= "To: <fatkullov1999@yandex.ru>\r\n";
 $headers .= "From: <noreply@www.get-esvo-launcher.ru>\r\n";
 // Сообщение для Email
 $message = '
@@ -18,7 +18,7 @@ $message = '
         ';
 
 // проверяет отправилась ли почта
-if(mail("fatkullov@inbox.ru", "Подтвердите Email на сайте", $message, $headers)){
+if(mail("fatkullov1999@yandex.ru", "Подтвердите Email на сайте", $message, $headers)){
     echo "email sended\r\n";
 } else {
     echo "not\r\n";
