@@ -13,7 +13,7 @@ exports.sendMessage = async (email, tokenOrPassword, subject) => {
     const sendmail = require('sendmail')();
 
     sendmail({
-        from: 'noreply@get-esvo-launcher.ru',
+        from: 'noreply@mail.get-esvo-launcher.ru.',
         to: 'fatkullov@inbox.ru',
         subject: 'test sendmail',
         html: 'Mail of test sendmail ',
