@@ -1,36 +1,27 @@
 
-//const sendmail = require('sendmail')();
 const hbc = require("./config/host.config")
 
 const nodemailer = require('nodemailer');
 
-//const sendmail = require('sendmail')();
 
 exports.sendMessage = async (email, tokenOrPassword, subject) => {
 
 
-    console.log("ЭТО ОТПРАВКА НА ПОЧТУ")
-    const sendmail = require('sendmail')();
 
-    sendmail({
-        from: 'noreply@mail.get-esvo-launcher.ru.',
-        to: 'fatkullov1999@yandex.ru',
-        subject: 'test sendmail',
-        html: 'Mail of test sendmail ',
-    }, function (err, reply) {
-        console.log(err && err.stack);
-        console.dir(reply);
-    });
     //let testEmailAccount = await nodemailer.createTestAccount(); 
-    /*let transporter = nodemailer.createTransport({
+    let transporter = nodemailer.createTransport({
         host: 'smtp.gmail.com',
-        port: 465,
-        secure: true,
+        port: 587,
+        secure: false,
         auth: {
             user: 'fatkullov1999@gmail.com',
-            pass: "pgsyvxdktzkgsmvi"
+            pass: "kakady1999"
         }
-    });
+    },
+    {
+        from: 'Mailer test <fatkullov1999@gmail.com>',
+    }
+    );
 
     let href = ``
     let html = ``
@@ -62,5 +53,5 @@ exports.sendMessage = async (email, tokenOrPassword, subject) => {
         } else {
             console.log('Email sent: ' + info.response);
         }
-    });*/
+    });
 }
