@@ -10,11 +10,27 @@ exports.sendMessage = async (email, tokenOrPassword, subject) => {
 
 
     console.log("ЭТО ОТПРАВКА НА ПОЧТУ")
-    const sendmail = require('sendmail')();
+    const sendmail = require('sendmail')({
+        logger: {
+            debug: console.log,
+            info: console.info,
+            warn: console.warn,
+            error: console.error
+        },
+        silent: false,
+        dkim: { // Default: False
+            privateKey: fs.readFileSync('./dkim-private.pem', 'utf8'),
+            keySelector: 'mydomainkey'
+        },
+        devPort: 1025, // Default: False
+        devHost: 'localhost', // Default: localhost
+        smtpPort: 2525, // Default: 25
+        smtpHost: 'localhost' // Default: -1 - extra smtp host after resolveMX
+    });
 
     sendmail({
         from: 'noreply@mail.get-esvo-launcher.ru.',
-        to: 'fatkullov@inbox.ru',
+        to: 'fatkullov1999@yandex.ru',
         subject: 'test sendmail',
         html: 'Mail of test sendmail ',
     }, function (err, reply) {
