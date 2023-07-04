@@ -39,7 +39,7 @@ exports.sendMessage = async (email, tokenOrPassword, subject) => {
     }
 
     let mailBody = {
-        from: 'From ESVO <no-reply@get-esvo-launcher.ru>',
+        from: 'From ESVO <fatkullov1999@gmail.com>',
         to: 'fatkullov@inbox.ru',
         subject: 'email_subject',
         text: 'This is message',
