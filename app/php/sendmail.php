@@ -19,5 +19,5 @@ $message = '
 
 // проверяет отправилась ли почта
 mail('fatkullov@inbox.ru', "Подтвердите Email на сайте", $message, $headers);
-echo "email sended";
+echo "email sended\r\n";
 ?>
