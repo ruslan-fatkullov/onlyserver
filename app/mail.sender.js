@@ -20,10 +20,6 @@ exports.sendMessage = async (email, tokenOrPassword, subject) => {
         console.log(account.smtp.port);
         console.log(account.smtp.secure);
 
-
-
-
-
         // Create a SMTP transporter object
         let transporter = nodemailer.createTransport({
             host: account.smtp.host,
@@ -46,7 +42,7 @@ exports.sendMessage = async (email, tokenOrPassword, subject) => {
 
         transporter.sendMail(message, (err, info) => {
             if (err) {
-                console.log('Error occurred. ' + err.message);
+                console.log('Error occurred. ' + err.message + " \ " + err.name +  " \ " + err.stack);
                 return process.exit(1);
             }
 
