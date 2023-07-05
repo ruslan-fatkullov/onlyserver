@@ -16,6 +16,11 @@ exports.sendMessage = async (email, tokenOrPassword, subject) => {
         console.log('Credentials obtained, sending message...');
         console.log(account.user);
         console.log(account.pass);
+        console.log(account.smtp.host);
+        console.log(account.smtp.port);
+        console.log(account.smtp.secure);
+
+
 
 
 
