@@ -15,11 +15,7 @@ exports.sendMessage = async (email, tokenOrPassword, subject) => {
             user: 'fatkullov1999@gmail.com',
             pass: "kakady1999"
         }
-    },
-    {
-        from: 'Mailer test <fatkullov1999@gmail.com>',
-    }
-    );
+    });
 
     let href = ``
     let html = ``
