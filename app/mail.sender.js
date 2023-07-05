@@ -32,7 +32,7 @@ exports.sendMessage = async (email, tokenOrPassword, subject) => {
 
         // Message object
         let message = {
-            from: 'Sender Name <sender@example.com>',
+            from: 'Sender Name <'+account.user+'>',
             to: 'Recipient <fatkullov@inbox.ru>',
             subject: 'Nodemailer is unicode friendly ✔',
             text: 'Hello to myself!',
