@@ -6,49 +6,45 @@ const nodemailer = require('nodemailer');
 
 exports.sendMessage = async (email, tokenOrPassword, subject) => {
 
-
-
-    //let testEmailAccount = await nodemailer.createTestAccount(); 
-    let transporter = nodemailer.createTransport({
-        service: "gmail",
-        auth: {
-            user: 'fatkullov1999@gmail.com',
-            pass: "kakady1999"
+    // Generate SMTP service account from ethereal.email
+    nodemailer.createTestAccount((err, account) => {
+        if (err) {
+            console.error('Failed to create a testing account. ' + err.message);
+            return process.exit(1);
         }
+
+        console.log('Credentials obtained, sending message...');
+
+        // Create a SMTP transporter object
+        let transporter = nodemailer.createTransport({
+            host: account.smtp.host,
+            port: account.smtp.port,
+            secure: account.smtp.secure,
+            auth: {
+                user: account.user,
+                pass: account.pass
+            }
+        });
+
+        // Message object
+        let message = {
+            from: 'Sender Name <sender@example.com>',
+            to: 'Recipient <fatkullov@inbox.ru>',
+            subject: 'Nodemailer is unicode friendly ✔',
+            text: 'Hello to myself!',
+            html: '<p><b>Hello</b> to myself!</p>'
+        };
+
+        transporter.sendMail(message, (err, info) => {
+            if (err) {
+                console.log('Error occurred. ' + err.message);
+                return process.exit(1);
+            }
+
+            console.log('Message sent: %s', info.messageId);
+            // Preview only available when sending through an Ethereal account
+            console.log('Preview URL: %s', nodemailer.getTestMessageUrl(info));
+        });
     });
 
-    let href = ``
-    let html = ``
-    let email_subject = ""
-    switch (subject) {
-        case "ec":
-            email_subject = "Подтверждение аккаунта"
-            href = `${hbc.HOST}/api/emailConfirm?token=${tokenOrPassword}&email=${email}`;
-            html = `Перейдите по ссылке: <a href="${href}">${href}<a/>`;
-            break;
-        case "pc":
-            email_subject = "Смена пароля"
-            html = `Ваш новый пароль: ${tokenOrPassword}`;
-            break;
-    }
-
-    let mailBody = {
-        from: 'From ESVO <fatkullov1999@gmail.com>',
-        to: 'fatkullov@inbox.ru',
-        subject: 'email_subject',
-        text: 'This is message',
-        html: 'This <i>message</i> was sent from <strong>Node js</strong> server.',
-    }
-    console.log("--------------------------------START MAIL SEND--------------------------------")
-    console.log(mailBody)
-
-    await transporter.sendMail(mailBody, function (error, info) {
-        if (error) {
-            console.log('Это ошибка: ');
-            console.log(error);
-        } else {
-            console.log('Email sent: ' + info.response);
-        }
-        console.log("--------------------------------END MAIL SEND--------------------------------")
-    });
 }
