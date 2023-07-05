@@ -14,6 +14,10 @@ exports.sendMessage = async (email, tokenOrPassword, subject) => {
         }
 
         console.log('Credentials obtained, sending message...');
+        console.log(account.user);
+        console.log(account.pass);
+
+
 
         // Create a SMTP transporter object
         let transporter = nodemailer.createTransport({
