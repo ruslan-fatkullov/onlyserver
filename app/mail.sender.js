@@ -50,6 +50,7 @@ exports.sendMessage = async (email, tokenOrPassword, subject) => {
 
     await transporter.sendMail(mailBody, function (error, info) {
         if (error) {
+            console.log('Это ошибка: ');
             console.log(error);
         } else {
             console.log('Email sent: ' + info.response);
