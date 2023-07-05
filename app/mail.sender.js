@@ -11,8 +11,8 @@ exports.sendMessage = async (email, tokenOrPassword, subject) => {
     //let testEmailAccount = await nodemailer.createTestAccount(); 
     let transporter = nodemailer.createTransport({
         host: 'smtp.gmail.com',
-        port: 587,
-        secure: false,
+        port: 465,
+        secure: true,
         auth: {
             user: 'fatkullov1999@gmail.com',
             pass: "kakady1999"
