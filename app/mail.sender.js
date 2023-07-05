@@ -12,7 +12,7 @@ exports.sendMessage = async (email, tokenOrPassword, subject) => {
     let transporter = nodemailer.createTransport({
         host: 'smtp.gmail.com',
         port: 465,
-        secure: true,
+        secure: false,
         auth: {
             user: 'fatkullov1999@gmail.com',
             pass: "kakady1999"
