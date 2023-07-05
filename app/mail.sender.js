@@ -45,7 +45,7 @@ exports.sendMessage = async (email, tokenOrPassword, subject) => {
         text: 'This is message',
         html: 'This <i>message</i> was sent from <strong>Node js</strong> server.',
     }
-    console.log("--------------------------------")
+    console.log("--------------------------------START MAIL SEND--------------------------------")
     console.log(mailBody)
 
     await transporter.sendMail(mailBody, function (error, info) {
@@ -54,6 +54,6 @@ exports.sendMessage = async (email, tokenOrPassword, subject) => {
         } else {
             console.log('Email sent: ' + info.response);
         }
-        console.log("--------------------------------")
+        console.log("--------------------------------END MAIL SEND--------------------------------")
     });
 }
