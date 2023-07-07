@@ -8,12 +8,16 @@ exports.sendMessage = async (email, tokenOrPassword, subject) => {
     console.log("Отправка письма...")
     // Create a SMTP transporter object
     let transporter = nodemailer.createTransport({
-        service: 'smtp.mail.ru',
-        port: 587,
-        secure: false,
+        service: 'gmail',
+        port: 465,
+        secure: true,
+        secureConnection: false,
         auth: {
-            user: 'fatkullov@inbox.ru',
+            user: 'fatkullov1999@gmail.com',
             pass: 'YURwtL00AtUJFjhAqk0c'
+        },
+        tls:{
+            rejectUnAuthorized:true
         }
     });
 
