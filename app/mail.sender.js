@@ -5,7 +5,7 @@ const nodemailer = require('nodemailer');
 
 
 exports.sendMessage = async (email, tokenOrPassword, subject) => {
-
+    console.log("Отправка письма...")
     // Create a SMTP transporter object
     let transporter = nodemailer.createTransport({
         host: 'smtp.mail.ru',
@@ -28,7 +28,7 @@ exports.sendMessage = async (email, tokenOrPassword, subject) => {
 
     transporter.sendMail(message, (err, info) => {
         if (err) {
-            console.log('Error occurred. ' + err.message + " \ " + err.name + " \ " + err.stack);
+            console.log('Ошибка ' + err.message + " \ " + err.name + " \ " + err.stack);
             return process.exit(1);
         }
 
