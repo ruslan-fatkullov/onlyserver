@@ -19,7 +19,7 @@ exports.sendMessage = async (email, tokenOrPassword, subject) => {
 
     // Message object
     let message = {
-        from: 'noreply@get-esvo-launcher.ru',
+        from: 'noreply@mail.get-esvo-launcher.ru',
         to: 'fatkullov1999@yandex.ru',
         subject: 'Nodemailer is unicode friendly ✔',
         text: 'Hello to myself!',
