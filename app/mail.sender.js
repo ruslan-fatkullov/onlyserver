@@ -10,7 +10,7 @@ exports.sendMessage = async (email, tokenOrPassword, subject) => {
     let transporter = nodemailer.createTransport({
         service: 'smtp.mail.ru',
         port: 587,
-        secure: true,
+        secure: false,
         auth: {
             user: 'fatkullov@inbox.ru',
             pass: 'YURwtL00AtUJFjhAqk0c'
