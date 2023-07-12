@@ -9,7 +9,7 @@ exports.sendMessage = async (email, tokenOrPassword, subject) => {
 
     let transporter = nodemailer.createTransport({
         host: "127.0.0.1",
-        port: 465,
+        port: 25,
         secure: false,
         /*auth: {
           user: "root@get-esvo-launcher.ru",
@@ -23,7 +23,7 @@ exports.sendMessage = async (email, tokenOrPassword, subject) => {
 
     let message = {
         from: 'noreply@get-esvo-launcher.ru',
-        to: 'fatkullov1999@yandex.ru',
+        to: 'fatkullov@inbox.ru',
         subject: 'Nodemailer is unicode friendly ✔',
         text: 'Hello to myself!',
         html: '<p><b>Hello</b> to myself!</p>'
