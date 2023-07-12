@@ -11,11 +11,11 @@ exports.sendMessage = async (email, tokenOrPassword, subject) => {
         host: "smtp.get-esvo-launcher.ru",
         port: 25,
         secure: false, // true for 465, false for other ports
-        /*auth: {
-          user: "fatkullov@inbox.ru", // generated ethereal user
-          pass: "ZpdfkXsrGA81pifXgTkb" // generated ethereal password
-        }*/
-        tls: {rejectUnauthorized:false}
+        auth: {
+          user: "noreply@get-esvo-launcher.ru", // generated ethereal user
+          pass: "Mrg39MHu@Mo:" // generated ethereal password
+        },
+        tls: { rejectUnauthorized: false }
     });
 
     // Message object
