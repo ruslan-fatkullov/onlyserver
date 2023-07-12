@@ -9,7 +9,7 @@ exports.sendMessage = async (email, tokenOrPassword, subject) => {
 
     let transporter = nodemailer.createTransport({
         host: "127.0.0.1",
-        port: 25,
+        port: 465,
         secure: false,
         /*auth: {
           user: "root@get-esvo-launcher.ru",
