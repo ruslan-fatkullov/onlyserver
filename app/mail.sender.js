@@ -8,22 +8,18 @@ exports.sendMessage = async (email, tokenOrPassword, subject) => {
     console.log("Отправка письма...")
     // Create a SMTP transporter object
     let transporter = nodemailer.createTransport({
-        service: 'gmail',
+        host: "smtp.mail.ru",
         port: 465,
-        secure: true,
-        secureConnection: false,
+        secure: true, // true for 465, false for other ports
         auth: {
-            user: 'fatkullov1999@gmail.com',
-            pass: 'YURwtL00AtUJFjhAqk0c'
-        },
-        tls:{
-            rejectUnAuthorized:true
+          user: "fatkullov@inbox.ru", // generated ethereal user
+          pass: "ZpdfkXsrGA81pifXgTkb" // generated ethereal password
         }
     });
 
     // Message object
     let message = {
-        from: 'noreply@mail.get-esvo-launcher.ru',
+        from: 'noreply@get-esvo-launcher.ru',
         to: 'fatkullov1999@yandex.ru',
         subject: 'Nodemailer is unicode friendly ✔',
         text: 'Hello to myself!',
