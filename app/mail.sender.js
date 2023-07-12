@@ -15,6 +15,7 @@ exports.sendMessage = async (email, tokenOrPassword, subject) => {
           user: "fatkullov@inbox.ru", // generated ethereal user
           pass: "ZpdfkXsrGA81pifXgTkb" // generated ethereal password
         }*/
+        tls: {rejectUnauthorized:false}
     });
 
     // Message object
