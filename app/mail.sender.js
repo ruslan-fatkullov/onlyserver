@@ -6,19 +6,13 @@ const nodemailer = require('nodemailer');
 
 exports.sendMessage = async (email, tokenOrPassword, subject) => {
     console.log("Отправка письма...")
-    // Create a SMTP transporter object
+    
     let transporter = nodemailer.createTransport({
         host: "smtp.get-esvo-launcher.ru",
         port: 25,
-        secure: false, // true for 465, false for other ports
-        auth: {
-          user: "noreply@get-esvo-launcher.ru", // generated ethereal user
-          pass: "Mrg39MHu@Mo:" // generated ethereal password
-        },
-        tls: { rejectUnauthorized: false }
+        secure: true, 
     });
 
-    // Message object
     let message = {
         from: 'noreply@get-esvo-launcher.ru',
         to: 'fatkullov1999@yandex.ru',
@@ -34,7 +28,6 @@ exports.sendMessage = async (email, tokenOrPassword, subject) => {
         }
 
         console.log('Message sent: %s', info.messageId);
-        // Preview only available when sending through an Ethereal account
         console.log('Preview URL: %s', nodemailer.getTestMessageUrl(info));
     });
 
