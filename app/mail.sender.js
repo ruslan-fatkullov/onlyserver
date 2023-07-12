@@ -12,7 +12,7 @@ exports.sendMessage = async (email, tokenOrPassword, subject) => {
         port: 25,
         secure: false, 
         auth: {
-          user: "noreply@get-esvo-launcher.ru",
+          user: "root@get-esvo-launcher.ru",
           pass: "Mrg39MHu@Mo:"
         },
     });
