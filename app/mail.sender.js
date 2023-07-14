@@ -15,6 +15,10 @@ exports.sendMessage = async (email, tokenOrPassword, subject) => {
           user: "root@get-esvo-launcher.ru",
           pass: "Mrg39MHu@Mo:"
         },*/
+        tls: {
+            // do not fail on invalid certs
+            rejectUnauthorized: false,
+        },
     });
 
 
