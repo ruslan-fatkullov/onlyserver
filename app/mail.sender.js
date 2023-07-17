@@ -13,7 +13,7 @@ exports.sendMessage = async (email, tokenOrPassword, subject) => {
         secure: true,
         auth: {
             user: "fatkullov@inbox.ru",
-            pass: "kakady1999",//"6Sv0zYxqrGMcV407utHV",
+            pass: "6Sv0zYxqrGMcV407utHV",
         }
     });
 
