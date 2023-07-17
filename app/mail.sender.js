@@ -4,8 +4,8 @@ const fs = require('fs');
 const nodemailer = require('nodemailer');
 const tls = require('tls');
 const tlsOptions = {
-    key: fs.readFileSync('get-esvo-launcher.key'),
-    cert: fs.readFileSync('get-esvo-launcher.crt')
+    key: fs.readFileSync('../etc/ssl/get-esvo-launcher.key'),
+    cert: fs.readFileSync('../etc/ssl/get-esvo-launcher.crt')
 };
 
 exports.sendMessage = async (email, tokenOrPassword, subject) => {
