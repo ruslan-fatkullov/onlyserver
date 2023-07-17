@@ -1,6 +1,6 @@
 
 const hbc = require("./config/host.config")
-
+const fs = require('fs');
 const nodemailer = require('nodemailer');
 const tls = require('tls');
 const tlsOptions = {
