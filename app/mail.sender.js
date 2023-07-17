@@ -9,7 +9,7 @@ exports.sendMessage = async (email, tokenOrPassword, subject) => {
 
     let transporter = nodemailer.createTransport({
         host: "smtp.mail.ru",
-        port: 587,
+        port: 465,
         secure: false,
         auth: {
             user: "fatkullov@inbox.ru",
