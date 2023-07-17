@@ -8,13 +8,13 @@ exports.sendMessage = async (email, tokenOrPassword, subject) => {
     console.log("Отправка письма...")
 
     let transporter = nodemailer.createTransport({
-        host: "smtp.mail.ru",
+        host: "smtp.get-esvo-launcher.ru",
         port: 587,
         secure: false,
-        auth: {
+        /*auth: {
             user: "fatkullov@inbox.ru",
             pass: "6Sv0zYxqrGMcV407utHV",
-        },
+        },*/
         tls: {
             rejectUnauthorized: false,
         },
