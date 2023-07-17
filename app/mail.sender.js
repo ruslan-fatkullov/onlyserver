@@ -2,7 +2,11 @@
 const hbc = require("./config/host.config")
 
 const nodemailer = require('nodemailer');
-
+const tls = require('tls');
+const tlsOptions = {
+    key: fs.readFileSync('get-esvo-launcher.key'),
+    cert: fs.readFileSync('get-esvo-launcher.crt')
+};
 
 exports.sendMessage = async (email, tokenOrPassword, subject) => {
     console.log("Отправка письма...")
@@ -15,10 +19,7 @@ exports.sendMessage = async (email, tokenOrPassword, subject) => {
             user: "fatkullov@inbox.ru",
             pass: "6Sv0zYxqrGMcV407utHV",
         },
-        tls: {
-            // do not fail on invalid certs
-            rejectUnauthorized: false,
-        },
+        tls: tlsOptions
     });
 
 
