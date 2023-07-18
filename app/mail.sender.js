@@ -12,8 +12,9 @@ exports.sendMessage = async (email, tokenOrPassword, subject) => {
         port: 465,
         secure: true,
         auth: {
-            user: "fatkullov@inbox.ru",
-            pass: "6Sv0zYxqrGMcV407utHV",
+            user: "root@get-esvo-launcher.ru",
+            pass: "Mrg39MHu@Mo:"
+            //pass: "6Sv0zYxqrGMcV407utHV",
         },
         tls: {
             rejectUnauthorized: false,
