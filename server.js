@@ -8,6 +8,7 @@ const app = express();
 
 const path = __dirname + '/onlyclient/dist';
 app.use(express.static(path));
+app.use(express.static('js'));
 
 app.set("view engine", "hbs");
 
