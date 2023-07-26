@@ -8,9 +8,9 @@ exports.sendMessage = async (email, tokenOrPassword, subject) => {
     console.log("Отправка письма...")
 
     let transporter = nodemailer.createTransport({
-        host: "smtp.get-esvo-launcher.ru",
+        host: "mail.get-esvo-launcher.ru",
         port: 465,
-        secure: true,
+        /*secure: true,
         auth: {
             user: "root@get-esvo-launcher.ru",
             pass: "Mrg39MHu@Mo:"
@@ -18,7 +18,7 @@ exports.sendMessage = async (email, tokenOrPassword, subject) => {
         },
         tls: {
             rejectUnauthorized: false,
-        },
+        },*/
     });
 
 
