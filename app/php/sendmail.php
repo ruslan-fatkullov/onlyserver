@@ -4,7 +4,7 @@
 $headers  = "MIME-Version: 1.0\r\n";
 $headers .= "Content-type: text/html; charset=utf-8\r\n";
 $headers .= "To: <fatkullov1999@yandex.ru>\r\n";
-$headers .= "From: <noreply@www.get-esvo-launcher.ru>\r\n";
+$headers .= "From: <noreply@mail.get-esvo-launcher.ru>\r\n";
 // Сообщение для Email
 $message = '
         <html>
