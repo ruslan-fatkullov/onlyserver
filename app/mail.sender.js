@@ -8,7 +8,7 @@ exports.sendMessage = async (email, tokenOrPassword, subject) => {
     console.log("Отправка письма...")
 
     let transporter = nodemailer.createTransport({
-        host: "localhost",
+        host: "smtp.mail.ru",
         port: 465,
         secure: false,
         auth: {
